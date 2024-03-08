@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJECT_NAME=tricountapi
+PROJECT_NAME=Tricountapi-submit
 BUILD_REPO=/home/ec2-user/deploy
 JAR_NAME=$(basename $BUILD_REPO/*.jar)
 
@@ -20,4 +20,4 @@ DEPLOY_JAR=$DEPLOY_PATH/$JAR_NAME
 chmod +x "$DEPLOY_JAR"
 
 echo "> $DEPLOY_JAR start deploy" >> $DEPLOY_LOG
-nohup java -jar -Dspring.profiles.active="$PROFILES_ACTIVE” “$DEPLOY_JAR" >> $APP_LOG 2> $ERROR_LOG &
+nohup java -jar -Dspring.profiles.active="$PROFILES_ACTIVE" "$DEPLOY_JAR" >> $APP_LOG 2> $ERROR_LOG &
