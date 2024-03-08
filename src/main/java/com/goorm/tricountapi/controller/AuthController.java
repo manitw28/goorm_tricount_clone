@@ -39,7 +39,8 @@ public class AuthController {
     @PostMapping("/login")
     public ApiResponse login(
             @RequestBody LoginRequest loginRequest,
-            HttpServletRequest request, HttpServletResponse response
+            HttpServletRequest request,
+            HttpServletResponse response
     ) {
         Member loginMember = memberService.login(loginRequest.getLoginId(), loginRequest.getPassword());
 
