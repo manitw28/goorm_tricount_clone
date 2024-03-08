@@ -55,7 +55,7 @@ jobs:
         cp build/libs/*.jar workspace/
         cd workspace && zip -r integrated-work *
         cd ../ && mkdir -p deploy
-        mv workspace/integrated-work.zip deploy/프로젝트명.zip
+        mv workspace/integrated-work.zip deploy/tricount-api.zip
       shell: bash
 
     - name: Upload to S3
