@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJECT_NAME=Tricount이름
+PROJECT_NAME=tricountapi
 BUILD_REPO=/home/ec2-user/deploy
 JAR_NAME=$(basename $BUILD_REPO/*.jar)
 
