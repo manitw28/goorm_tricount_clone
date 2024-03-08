@@ -47,13 +47,19 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-northeast-2
 
-    - name: Generate deploymen package
+    - name: Generate deployment package
       run: |
         mkdir -p workspace
-        #cp scripts/*.sh workspace/ → 일단 지금은 주석처리
-        #cp appspec.yml workspace/ → 일단 지금은 주석처리
+        cp scripts/*.sh workspace/
+        cp appspec.yml workspace/
         cp build/libs/*.jar workspace/
         cd workspace && zip -r integrated-work *
         cd ../ && mkdir -p deploy
         mv workspace/integrated-work.zip deploy/프로젝트명.zip
       shell: bash
+
+    - name: Upload to S3
+      run: aws s3 cp —region ap-northeast-2 ./deploy/tricount-api.zip s3://$S3_BUCKET_NAME/tricount-api.zip
+
+    - name: Code Deploy
+      run: aws deploy create-deployment —application-name $CODE_DEPLOY_APP_NAME —deployment-config-name CodeDeployDefault.AllAtOnce —deployment-group-name $CODE_DEPLOY_GROUP_NAME —s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=tricount-api.zip
