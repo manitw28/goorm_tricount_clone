@@ -12,9 +12,9 @@ on:
     branches: [ "main" ]
 
 env:
-  S3_BUCKET_NAME: soniccount-bucket-test
-  CODE_DEPLOY_APP_NAME: soniccount
-  CODE_DEPLOY_GROUP_NAME: soniccount-deploy-group
+  S3_BUCKET_NAME: tricount-bucket
+  CODE_DEPLOY_APP_NAME: tricountapi
+  CODE_DEPLOY_GROUP_NAME: tricountapi
 
 jobs:
   build:
