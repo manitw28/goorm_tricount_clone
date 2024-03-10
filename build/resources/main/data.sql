@@ -1,7 +1,7 @@
-INSERT INTO member (login_id, password, name) VALUES ('easy','1234','kim');
-INSERT INTO member (login_id, password, name) VALUES ('easy2','1234','choi');
-INSERT INTO member (login_id, password, name) VALUES ('easy3','1234','song');
-INSERT INTO member (login_id, password, name) VALUES ('easy4','1234','lee');
+INSERT INTO member (login_id, password, name) VALUES ('kim','1234','kim');
+INSERT INTO member (login_id, password, name) VALUES ('choi','1234','choi');
+INSERT INTO member (login_id, password, name) VALUES ('song','1234','song');
+INSERT INTO member (login_id, password, name) VALUES ('lee','1234','lee');
 
 INSERT INTO settlement (name) VALUES ('testSettlement1');
 INSERT INTO settlement (name) VALUES ('testSettlement2');
